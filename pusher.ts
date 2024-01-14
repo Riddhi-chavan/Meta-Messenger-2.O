@@ -1,7 +1,7 @@
 import Pusher from 'pusher';
 import CleintPusher from 'pusher-js';
 
-console.log("app_id" ,process.env.PUSHER_SERVER_KEY!)
+
 
 export const serverPusher = new Pusher({
     appId: process.env.PUSHER_SERVER_ID!,

@@ -12,7 +12,7 @@ import Facebook from "next-auth/providers/facebook";
      }),
     ],
     pages : {
-      signIn : "auth/signin",
+      signIn : "/auth/signin",
     }
 };
 
