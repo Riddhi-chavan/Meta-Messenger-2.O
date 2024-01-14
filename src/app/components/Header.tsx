@@ -12,10 +12,6 @@ function Header() {
     const pathname = usePathname();
     const isSignInPage = pathname === '/auth/signin';
 
-
-    console.log("session ", session);
-
-
     if (session)
         return (
             <header className='sticky top-0 z-50 bg-[#050E21]  flex justify-between items-center p-10 shadow-md '>
