@@ -11,8 +11,8 @@ async function SignIN() {
     const router = useRouter()
 
     if (session) {
-        router.push('/')
-        return null // You can also render a loading spinner here if needed
+        router.push(process.env.BASE_URL!)
+        return null 
     }
     const providers = await getProviders()
 
