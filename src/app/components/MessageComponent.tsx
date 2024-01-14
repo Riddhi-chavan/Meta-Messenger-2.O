@@ -33,11 +33,6 @@ function MessageComponent({message} : Props) {
         
        )}
 
-        
-
-       
-       
-        
       </div>
       <div>
         <p className={`text-[0.65rem] px-[2px] pb-[2px] ${isUser ? "text-blue-400 text-right" : "text-[#be36c8] text-left"}`}>{message.username}</p>

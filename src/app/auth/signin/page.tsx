@@ -11,7 +11,7 @@ async function SignIN() {
     const router = useRouter()
 
     if (session) {
-        router.push(process.env.BASE_URL!)
+        router.push(process.env.BASE_URL! ? process.env.BASE_URL! : "/")
         return null 
     }
     const providers = await getProviders()
