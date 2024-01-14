@@ -23,7 +23,7 @@ function SignInComponent({ providers }: Props) {
           <button
           className='bg-blue-500 hover:bg-blue-700 w-96 text-white font-bold py-2 px-4 rounded'
           onClick={(e) => { e.preventDefault() ; signIn(provider.id , {
-            callbackUrl : process.env.VERCEL || "http://localhost:3000"
+            callbackUrl : process.env.BASE_URL
           }) }}>
             Sign in with {provider.name}
           </button>
