@@ -154,7 +154,7 @@ To create a new Next.js project, you can use the following commands:
    ```
      
 ### Clone Project
-  - git clone  -   https://github.com/Riddhi-chavan/The-Live-News.git
+  - git clone  -   https://github.com/Riddhi-chavan/Meta-Messenger-2.O
   - npm install
   - npm run dev
 
@@ -165,7 +165,7 @@ Visit http://localhost:3000 in your browser to see the app.
 
 Email:riddhic164@gmail.com
 
-Project Link: https://github.com/Riddhi-chavan/The-Live-News
+Project Link: https://github.com/Riddhi-chavan/Meta-Messenger-2.O
 
 
 Thank you
