@@ -54,9 +54,9 @@ Meta Messenger 2.0 is an advanced real-time messaging application that allows us
 
 # Screenshots
 
-![1 screenshots ](<URL_TO_YOUR_LOGO_IMAGE>)
+![Screenshot (345)](https://github.com/Riddhi-chavan/Meta-Messenger-2.O/assets/130183432/5670540b-a1ad-4ab2-877e-c1fe8d03c6c2) 
 
-![2 screenshots ](<URL_TO_YOUR_LOGO_IMAGE>)
+![Screenshot (346)](https://github.com/Riddhi-chavan/Meta-Messenger-2.O/assets/130183432/2e99a70c-785b-4642-bcf5-e6065899b690)
 
 # Demo 
 
