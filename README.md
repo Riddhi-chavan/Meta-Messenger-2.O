@@ -1,36 +1,173 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+![App Logo](<URL_TO_YOUR_LOGO_IMAGE>)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Meta Messenger 2.O
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* __Overview__
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Meta Messenger 2.0 is an advanced real-time messaging application that allows users to connect, chat, and communicate seamlessly. Built on cutting-edge technologies, this messenger offers a user-friendly interface and incorporates the ability to log in using Facebook for a streamlined experience.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+* __Table of Contents__
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Section                |
+|------------------------|
+| [About the Project](#about-the-project)         |
+| [Tech Stack](#tech-stack) |
+| [Screenshots](#screenshots)                     |
+| [Demo](#demo)                                   |
+| [Live Demo](#live-demo)                         |
+| [Getting Started](#getting-started)             |
+| [Prerequisites](#prerequisites)                 |
+| [Installation](#installation)                   |
+| [Clone Project](#clone-project)                 |
+| [Contact](#contact)                             |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+# About the Project
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Real-Time Messaging
+- Facebook Integration
+- Cutting-Edge Tech Stack
+- Optimized Performance
+- User-Centric Design
+
+
+## Tech Stack
+
+| Technology / Library   |
+|-----------------------|
+| [Upstash](#upstach)             |
+| [Redis](#redis)                 |
+| [Facebook](#facebook)            |
+| [Pusher ](#pusher)               |
+| [UUID](#uuid)           |
+| [Next.js 14](#nextjs)          |
+| [SWR](#swr)                 |
+| [Tailwind ](#tailwind)             |
+| [React-Timeago ](#react-timeago)        |
+| [NextAuth](#next-auth)           |
+| [TypeScript](#typescript)           |
+
+# Screenshots
+
+![Screenshot (345)](https://github.com/Riddhi-chavan/Meta-Messenger-2.O/assets/130183432/5670540b-a1ad-4ab2-877e-c1fe8d03c6c2) 
+
+![Screenshot (346)](https://github.com/Riddhi-chavan/Meta-Messenger-2.O/assets/130183432/2e99a70c-785b-4642-bcf5-e6065899b690)
+
+# Demo 
+
+![ video  ](<URL_TO_YOUR_LOGO_IMAGE>)
+
+# Live demo 
+
+ - Click here to see  [Vercel Live Demo ](https://mediastack.com/)
+
+
+# Getting Started
+
+### Prerequisites
+
+- Sign up for Upstach Account  [here](https://upstash.com/)
+- Install UUID Library  [here](https://www.npmjs.com/package/uuid)
+- Install Redis from   [here](https://github.com/redis/ioredis)
+- Create a Meta developer App [here](https://developers.facebook.com/)
+- Sign up to Pusher [here](https://pusher.com/)
+- Create a Nextjs App with  tailwind typescript included [here](https://nextjs.org/docs/pages/api-reference/create-next-app)
+- Install React-Timeago[here](https://www.npmjs.com/package/react-timeago)
+- Install Nextauth from [here](https://next-auth.js.org/getting-started/example)
+
+
+
+## Installation
+
+* __Nextjs__ 
+To create a new Next.js project, you can use the following commands:
+
+  - Open your terminal.
+  - Run the following command:
+      - With npx
+      ```bash
+      npx create-next-app@latest
+      ```
+  - Start the development server: 
+    ```bash
+    npm run dev
+    ```
+
+### Upstash
+
+- Sign in to Upstash
+- Create Database
+- Connect to Database
+   - Choose Node
+   -  Obtain your password
+   - Add to .env : 
+   ```bash
+    REDIS_URL=your-password
+    ```
+
+### Pusher 
+- Sign up on Pusher
+- Create a Channel
+    - Obtain App Key:
+        ```bash
+         APP_ID= your-app-id
+       ```
+       ```bash
+         PUSHER_SERVER_KEY= your-app-key
+         ```
+         ```bash
+          PUSHER_SERVER_SECRET= your-app-secret
+         ```
+        ```bash
+         cluster = add-cluster
+        ```
+
+### Facebook 
+-  Sign in to Facebook for Developer
+- Create an App
+- From dashboard, go to App Settings.
+- Navigate to Basic.
+- Obtain Facebook 
+   ```bash
+    FACEBOOK_CLINET_ID=your-facebook-app_id
+  ```
+  ```bash
+   FACEBOOK_CLINET_SECRET=your-facebook-app_secret
+  ```
+
+### Next Auth 
+ - Open your terminal.
+ - Run the following command:
+    - With npm 
+    ```bash 
+    npm install next-auth
+    ```
+  - generate NEXTAUTH_SECRET
+   - Add the generated secret to your environment      variable (env)
+   ```bash
+     NEXTAUTH_SECRET=your_nextauth_secret
+   ```
+     
+### Clone Project
+  - git clone  -   https://github.com/Riddhi-chavan/Meta-Messenger-2.O
+  - npm install
+  - npm run dev
+
+Visit http://localhost:3000 in your browser to see the app.
+
+
+# Contact
+
+Email:riddhic164@gmail.com
+
+Project Link: https://github.com/Riddhi-chavan/Meta-Messenger-2.O
+
+
+Thank you
+for checking out my project! If you have any suggestions or find issues, feel free to open an [issue](https://github.com/Riddhi-chavan/The-Live-News/issues) or submit a [pull request](https://github.com/Riddhi-chavan/The-Live-News/pulls). Your feedback is highly appreciated!
+
