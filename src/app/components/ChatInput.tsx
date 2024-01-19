@@ -46,6 +46,7 @@ function ChatInput() {
     
           mutate(optimisticData, false);
         }
+        
     
         const response = await fetch(`/api/addMessage`, {
           method: 'POST',

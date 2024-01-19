@@ -1,6 +1,0 @@
-{
-    "routes": [
-      { "src": "/api/.*", "methods": ["GET", "POST"] }
-    ]
-  }
-  

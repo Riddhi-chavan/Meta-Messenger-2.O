@@ -4,6 +4,7 @@ import Facebook from "next-auth/providers/facebook";
 
 
 
+
  const  authOptions : NextAuthOptions = {
     providers  : [
      Facebook({
