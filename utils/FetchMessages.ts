@@ -2,7 +2,7 @@ import { Message } from "../typings";
 
 const fetcher = async () => {
   try {
-    const res = await fetch("/api/getMessage");
+    const res = await fetch(`/api/getMessage`);
     console.log("Fetch response:", res);
 
     const data = await res.json();

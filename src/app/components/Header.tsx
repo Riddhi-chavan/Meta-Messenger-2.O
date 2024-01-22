@@ -8,9 +8,11 @@ import { usePathname } from 'next/navigation';
 
 
 function Header() {
-    const { data: session } = useSession();
+    // const { data: session } = useSession();
     const pathname = usePathname();
-    const isSignInPage = pathname === '/auth/signin';
+    // const isSignInPage = pathname === '/auth/signin';
+  const    isSignInPage =  false
+  const session =  true
 
     if (session)
         return (
@@ -27,7 +29,8 @@ function Header() {
 
                     <div>
                         <p className='text-blue-400'>Logged in as:</p>
-                        <p className='font-bold text-[#f50078] text-lg'>{session.user?.name}</p>
+                        {/* <p className='font-bold text-[#f50078] text-lg'>{session.user?.name}</p> */}
+                        <p className='font-bold text-[#f50078] text-lg'>riddhi chavan</p>
                     </div>
                 </div>
                 <LogOutButton />
@@ -46,11 +49,11 @@ function Header() {
                 </div>
 
 
-                {!isSignInPage && (
+                {/* {!isSignInPage && (
                     <Link href='/auth/signin' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
                         Sign In
                     </Link>
-                )}
+                )} */}
             </div>
         </header>
     )

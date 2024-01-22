@@ -10,14 +10,15 @@ import { useSession } from 'next-auth/react';
 function ChatInput() {
   const [input, setInput] = useState('');
   const { data: messages, error, mutate } = useSWR("/api/getMessage", fetcher );
-  const { data: session } = useSession(); 
+  // const { data: session } = useSession(); 
 
   console.log("Received messages:", messages);
 
   const addMessage = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!input || !session) return;
+    // if (!input || !session) return;
+    if(!input) return ;
 
     const messageToSend = input;
     setInput('');
@@ -28,9 +29,9 @@ function ChatInput() {
       id,
       message: messageToSend,
       created_at: Date.now(),
-      username:  session.user?.name! ,
-      profilePic: session.user?.image!,
-      email: session.user?.email!,
+      username: "Riddhi chavan" ,
+      profilePic: "/avatar/jpg",
+      email: "riddhic164@gmail.com",
     };
     
     
@@ -114,11 +115,13 @@ if (!messages) {
         type='text'
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder={session ? 'Enter Message here...' : 'Sign in to send a message'}
-        className={`flex-1 rounded border border-[#D9E3F9] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-[#D9E3F9] bg-[#050E21] px-3 py-3 ${
-          !session ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''
+        // placeholder={session ? 'Enter Message here...' : 'Sign in to send a message'}
+        placeholder='enter Message here'
+        // className={`flex-1 rounded border border-[#D9E3F9] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-[#D9E3F9] bg-[#050E21] px-3 py-3 ${
+        //   !session ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''
+        className={`flex-1 rounded border border-[#D9E3F9] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-[#D9E3F9] bg-[#050E21] px-3 py-3 
         }`}
-        disabled={!session} // Disable the input if not authenticated
+        // disabled={!session} // Disable the input if not authenticated
       />
       <button
         type='submit'

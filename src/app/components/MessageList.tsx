@@ -13,14 +13,14 @@ type Props = {
 };
 
 function MessageList({ initialMessages }: Props) {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!session) {
-      router.push('/auth/signin');
-    }
-  }, [session, router]);
+  // useEffect(() => {
+  //   if (!session) {
+  //     router.push('/auth/signin');
+  //   }
+  // }, [session, router]);
 
   const { data: fetcherData, error, mutate } = useSWR("/api/getMessage", fetcher);
   const messages = fetcherData?.data || [];
