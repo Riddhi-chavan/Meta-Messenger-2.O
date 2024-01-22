@@ -1,65 +1,67 @@
-"use client"
-import React, { useEffect } from 'react';
-import useSWR from 'swr';
-import fetcher from '../../../utils/FetchMessages';
-import { Message } from '../../../typings';
-import MessageComponent from './MessageComponent';
-import { clientPusher } from '../../../pusher';
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+// "use client"
+// import React, { useEffect } from 'react';
+// import useSWR from 'swr';
+// import fetcher from '../../../utils/FetchMessages';
+// import { Message } from '../../../typings';
+// import MessageComponent from './MessageComponent';
+// import { clientPusher } from '../../../pusher';
+// import { useSession } from 'next-auth/react';
+// import { useRouter } from 'next/navigation';
 
-type Props = {
-  initialMessages: Message[];
-};
+// type Props = {
+//   initialMessages: Message[];
+// };
 
-function MessageList({ initialMessages }: Props) {
-  const { data: session } = useSession();
-  const router = useRouter();
+// function MessageList({ initialMessages }: Props) {
+//   const { data: session } = useSession();
+//   const router = useRouter();
 
-  useEffect(() => {
-    if (!session) {
-      router.push('/auth/signin');
-    }
-  }, [session, router]);
+//   useEffect(() => {
+//     if (!session) {
+//       router.push('/auth/signin');
+//     }
+//   }, [session, router]);
 
-  const { data: fetcherData, error, mutate } = useSWR("/api/getMessage", fetcher);
-  const messages = fetcherData?.data || [];
+//   const { data: fetcherData, error, mutate } = useSWR("/api/getMessage", fetcher);
+//   const messages = fetcherData?.data || [];
 
-  useEffect(() => {
-    const channel = clientPusher.subscribe('messages');
-    channel.bind('new-message', async (data: Message) => {
-      if (messages?.find((message) => message.id === data.id)) return;
+//   console.log("messeage list" , messages);
 
-      mutate(fetcher, {
-        optimisticData: {
-          data: [data, ...messages!],
-          error: null,
-        },
-        rollbackOnError: true,
-      });
-    });
+//   useEffect(() => {
+//     const channel = clientPusher.subscribe('messages');
+//     channel.bind('new-message', async (data: Message) => {
+//       if (messages?.find((message) => message.id === data.id)) return;
 
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      left: 0,
-      behavior: 'smooth'
-    });
+//       mutate(fetcher, {
+//         optimisticData: {
+//           data: [data, ...messages!],
+//           error: null,
+//         },
+//         rollbackOnError: true,
+//       });
+//     });
 
-    return () => {
-      channel.unbind_all();
-      channel.unsubscribe();
-    };
-  }, [messages, mutate, clientPusher]);
+//     window.scrollTo({
+//       top: document.body.scrollHeight,
+//       left: 0,
+//       behavior: 'smooth'
+//     });
 
-  const filteredMessages = messages.filter((message) => message.id !== 'optimistic-id');
+//     return () => {
+//       channel.unbind_all();
+//       channel.unsubscribe();
+//     };
+//   }, [messages, mutate, clientPusher]);
 
-  return (
-    <div className='space-y-5 px-5 pt-8 pb-32 max-w-2xl xl:max-w-4xl mx-auto '>
-      {(filteredMessages || initialMessages).map((message: Message) => (
-        <MessageComponent key={message.id} message={message} />
-      ))}
-    </div>
-  );
-}
+//   const filteredMessages = messages.filter((message) => message.id !== 'optimistic-id');
 
-export default MessageList;
+//   return (
+//     <div className='space-y-5 px-5 pt-8 pb-32 max-w-2xl xl:max-w-4xl mx-auto '>
+//       {(filteredMessages || initialMessages).map((message: Message) => (
+//         <MessageComponent key={message.id} message={message} />
+//       ))}
+//     </div>
+//   );
+// }
+
+// export default MessageList;
