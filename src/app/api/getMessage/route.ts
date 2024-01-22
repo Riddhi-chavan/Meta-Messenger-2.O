@@ -3,7 +3,7 @@ import redis from "../../../../radis";
 import { Message } from "../../../../typings";
 import { NextResponse } from "next/server";
 
-export async function GET(request:  Request) {
+export async function GET() {
     try {
         const messages = await redis.hgetall('message');
 
